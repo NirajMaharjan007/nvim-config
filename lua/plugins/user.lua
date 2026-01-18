@@ -10,6 +10,22 @@ return {
     -- == Examples of Adding Plugins ==
 
     "HiPhish/nvim-ts-rainbow2",
+    {
+        "HiPhish/rainbow-delimiters.nvim",
+        config = function()
+            require('rainbow-delimiters.setup').setup {
+                strategy = {
+                    enabled = true
+                },
+                query = {
+                    enabled = true
+                },
+                highlight = {
+                    enabled = true,
+                },
+            }
+        end
+    },
     "andweeb/presence.nvim",
     {
         "ray-x/lsp_signature.nvim",
