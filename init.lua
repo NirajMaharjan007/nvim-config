@@ -1,6 +1,15 @@
 -- This file simply bootstraps the installation of Lazy.nvim and then calls other files for execution
 -- This file doesn't necessarily need to be touched, BE CAUTIOUS editing this file and proceed at your own risk.
 local lazypath = vim.env.LAZY or vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+vim.opt.rtp:prepend(lazypath)
+
+
+if vim.fn.has("win32") == 1 then
+    -- OR use CMD if you prefer:
+    vim.opt.shell = "cmd.exe"
+    vim.opt.shellcmdflag = "/c"
+end
+
 
 if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
     -- stylua: ignore
@@ -16,7 +25,6 @@ if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
     end
 end
 
-vim.opt.rtp:prepend(lazypath)
 
 -- validate that lazy is available
 if not pcall(require, "lazy") then
