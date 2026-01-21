@@ -12,27 +12,27 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = false, -- enable/disable inlay hints on start
-      semantic_tokens = true, -- enable/disable semantic token highlighting
+      codelens = true,              -- enable/disable codelens refresh on start
+      inlay_hints = false,          -- enable/disable inlay hints on start
+      semantic_tokens = true,       -- enable/disable semantic token highlighting
     },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
-        allow_filetypes = { -- enable format on save for specified filetypes only
+        enabled = true,             -- enable or disable format on save globally
+        allow_filetypes = {         -- enable format on save for specified filetypes only
           -- "go",
         },
-        ignore_filetypes = { -- disable format on save for specified filetypes
+        ignore_filetypes = {         -- disable format on save for specified filetypes
           -- "python",
         },
       },
-      disabled = { -- disable formatting capabilities for the listed language servers
+      disabled = {       -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
       },
-      timeout_ms = 1000, -- default format timeout
+      timeout_ms = 1000,       -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
       --   return true
       -- end
@@ -72,7 +72,9 @@ return {
           -- the rest of the autocmd options (:h nvim_create_autocmd)
           desc = "Refresh codelens (buffer)",
           callback = function(args)
-            if require("astrolsp").config.features.codelens then vim.lsp.codelens.refresh { bufnr = args.buf } end
+            if require("astrolsp").config.features.codelens then
+              vim.lsp.codelens.refresh { bufnr = args.buf }
+            end
           end,
         },
       },
@@ -90,7 +92,8 @@ return {
           function() require("astrolsp.toggles").buffer_semantic_tokens() end,
           desc = "Toggle LSP semantic highlight (buffer)",
           cond = function(client)
-            return client.supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
+            return client.supports_method "textDocument/semanticTokens/full"
+                and vim.lsp.semantic_tokens ~= nil
           end,
         },
       },
