@@ -13,30 +13,30 @@ return {
     {
         "HiPhish/rainbow-delimiters.nvim",
         config = function()
-            require('rainbow-delimiters.setup').setup {
+            require("rainbow-delimiters.setup").setup {
                 strategy = {
-                    enabled = true
+                    enabled = true,
                 },
                 query = {
-                    enabled = true
+                    enabled = true,
                 },
                 highlight = {
                     enabled = true,
                 },
             }
-        end
+        end,
     },
     "andweeb/presence.nvim",
     {
         "ray-x/lsp_signature.nvim",
         event = "BufRead",
         config = function()
-            require('lsp_signature').setup({
+            require("lsp_signature").setup {
                 handler_opts = {
-                    border = "rounded"
+                    border = "rounded",
                 },
                 hint_enable = false, -- Disable virtual text hint
-            })
+            }
         end,
     },
 
@@ -48,26 +48,25 @@ return {
         opts = {
             dashboard = {
                 preset = {
-                    header = table.concat({
-                        " █████  ███████ ████████ ██████   ██████ ",
-                        "██   ██ ██         ██    ██   ██ ██    ██",
-                        "███████ ███████    ██    ██████  ██    ██",
-                        "██   ██      ██    ██    ██   ██ ██    ██",
-                        "██   ██ ███████    ██    ██   ██  ██████ ",
-                        "",
-                        "███    ██ ██    ██ ██ ███    ███",
-                        "████   ██ ██    ██ ██ ████  ████",
-                        "██ ██  ██ ██    ██ ██ ██ ████ ██",
-                        "██  ██ ██  ██  ██  ██ ██  ██  ██",
-                        "██   ████   ████   ██ ██      ██",
-                    }, "\n"),
+                    header = [[
+
+   ▄████████    ▄████████     ███        ▄████████  ▄██████▄       ███▄▄▄▄    ▄█    █▄   ▄█    ▄▄▄▄███▄▄▄▄
+  ███    ███   ███    ███ ▀█████████▄   ███    ███ ███    ███      ███▀▀▀██▄ ███    ███ ███  ▄██▀▀▀███▀▀▀██▄
+  ███    ███   ███    █▀     ▀███▀▀██   ███    ███ ███    ███      ███   ███ ███    ███ ███▌ ███   ███   ███
+  ███    ███   ███            ███   ▀  ▄███▄▄▄▄██▀ ███    ███      ███   ███ ███    ███ ███▌ ███   ███   ███
+▀███████████ ▀███████████     ███     ▀▀███▀▀▀▀▀   ███    ███      ███   ███ ███    ███ ███▌ ███   ███   ███
+  ███    ███          ███     ███     ▀███████████ ███    ███      ███   ███ ███    ███ ███  ███   ███   ███
+  ███    ███    ▄█    ███     ███       ███    ███ ███    ███      ███   ███ ███    ███ ███  ███   ███   ███
+  ███    █▀   ▄████████▀     ▄████▀     ███    ███  ▀██████▀        ▀█   █▀   ▀██████▀  █▀    ▀█   ███   █▀
+                                        ███    ███
+                    ]],
                 },
             },
         },
     },
 
     -- You can disable default plugins as follows:
-    { "max397574/better-escape.nvim", enabled = false },
+    { "max397574/better-escape.nvim", enabled = true },
 
     -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
     {
@@ -92,7 +91,9 @@ return {
                 {
                     Rule("$", "$", { "tex", "latex" })
                     -- don't add a pair if the next character is %
-                        :with_pair(cond.not_after_regex "%%")
+                        :with_pair(
+                            cond.not_after_regex "%%"
+                        )
                     -- don't add a pair if  the previous character is xxx
                         :with_pair(
                             cond.not_before_regex("xxx", 3)
@@ -100,7 +101,9 @@ return {
                     -- don't move right when repeat character
                         :with_move(cond.none())
                     -- don't delete if the next character is xx
-                        :with_del(cond.not_after_regex "xx")
+                        :with_del(
+                            cond.not_after_regex "xx"
+                        )
                     -- disable adding a newline when you press <cr>
                         :with_cr(cond.none()),
                 },
@@ -109,5 +112,4 @@ return {
             )
         end,
     },
-
 }
