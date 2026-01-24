@@ -4,7 +4,6 @@ local lazypath = vim.env.LAZY or vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 vim.opt.rtp:prepend(lazypath)
 
 if vim.fn.has "win32" == 1 then
-    -- OR use CMD if you prefer:
     vim.opt.shell = "cmd.exe"
     vim.opt.shellcmdflag = "/c"
 end
@@ -34,13 +33,7 @@ if not pcall(require, "lazy") then
 end
 
 vim.opt.syntax = "on"
-vim.g.loaded_nvim_treesitter = false
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-    -- Disable syntax highlighting in hover
-    stylize_markdown = false,
-})
+vim.g.loaded_nvim_treesitter = true
 
 require "lazy_setup"
 require "polish"
