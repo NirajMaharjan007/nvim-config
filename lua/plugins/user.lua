@@ -10,7 +10,6 @@ return {
     -- == Examples of Adding Plugins ==
     --
     "nvim-lua/plenary.nvim",
-    "APZelos/blamer.nvim",
     "sindrets/diffview.nvim",
     "HiPhish/nvim-ts-rainbow2",
     {

@@ -1,7 +1,5 @@
 require("nvim-treesitter.install").compilers = { "clang", "gcc" }
 
-vim.g.blamer_enabled = true
-
 vim.opt.wildignore = {
     "*/node_modules/*",
     "*/target/*",
