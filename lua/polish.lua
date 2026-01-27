@@ -5,6 +5,13 @@ require("nvim-treesitter").setup {
 
 require("nvim-treesitter.install").compilers = { "clang", "gcc" }
 
+vim.opt.wildignore = {
+    "*/node_modules/*",
+    "*/target/*",
+    "*.tmp",
+    "*.uid",
+}
+
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "<filetype>" },
     callback = function() vim.treesitter.start() end,
