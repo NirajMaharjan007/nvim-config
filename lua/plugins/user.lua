@@ -12,7 +12,15 @@ return {
     "nvim-lua/plenary.nvim",
     "tpope/vim-fugitive",
     "HiPhish/nvim-ts-rainbow2",
-
+    {
+        "nvim-telescope/telescope.nvim",
+        version = "*",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            -- optional but recommended
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        },
+    },
     {
         "HiPhish/rainbow-delimiters.nvim",
         config = function()
