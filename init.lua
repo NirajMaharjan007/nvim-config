@@ -32,6 +32,7 @@ if not pcall(require, "lazy") then
     vim.cmd.quit()
 end
 
+vim.opt.clipboard = "unnamedplus"
 vim.opt.syntax = "on"
 vim.g.loaded_nvim_treesitter = true
 
