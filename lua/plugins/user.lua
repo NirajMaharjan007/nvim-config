@@ -112,11 +112,7 @@ return {
             }
         end,
     },
-    {
-        "Mathijs-Bakker/godotdev.nvim",
-        dependencies = { "nvim-lspconfig", "nvim-dap", "nvim-dap-ui", "nvim-treesitter" },
-    },
-
+    
     "andweeb/presence.nvim",
     {
         "ray-x/lsp_signature.nvim",

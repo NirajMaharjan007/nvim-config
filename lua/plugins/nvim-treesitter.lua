@@ -1,16 +1,17 @@
+---@type LazySpec
 return {
-    "nvim-treesitter/nvim-treesitter",
-    lazy = false,
-    build = ":TSUpdate",
-    config = function()
-        require("nvim-treesitter.configs").setup({
-            auto_install = false,
-            indent = { enable = true },
-            incremental_selection = { enable = true },
-            textobjects = { enable = true },
-            highlight = { enable = true },
-            -- Sync parser installation
-            sync_install = true,
-        })
-    end
+    "AstroNvim/astrocore",
+    ---@type AstroCoreOpts
+    opts = {
+        treesitter = {
+            highlight = true, -- enable/disable treesitter based highlighting
+            indent = true, -- enable/disable treesitter based indentation
+            auto_install = true, -- enable/disable automatic installation of detected languages
+            ensure_installed = {
+                "lua",
+                "vim",
+                -- add more arguments for adding more treesitter parsers
+            },
+        },
+    },
 }
