@@ -10,7 +10,7 @@ return {
     "AstroNvim/astroui",
     ---@type AstroUIOpts
     opts = {
-        colorscheme = "dracula",
+        colorscheme = "astrodark",
         --
         -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
         highlights = {

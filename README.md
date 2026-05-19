@@ -18,16 +18,11 @@ A template for getting started with [AstroNvim](https://github.com/AstroNvim/Ast
   ```
 
 - For Windows Powershell
- 
+
   ```shell
   Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
   Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
-  git clone --depth 1 https://github.com/AstroNvim/template $env:LOCALAPPDATA\nvim
-  Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse -Force
-  nvim
   ```
-
- 
 
 #### Create a new user repository from this template
 
@@ -41,11 +36,10 @@ You can also just clone this repository directly if you do not want to track you
   ```shell
   https://github.com/nirajmaharjan007/nvim-config.git ~/.config/nvim
   ```
-- for Windows 
+- for Windows
   ```shell
   https://github.com/nirajmaharjan007/nvim-config.git C:\Users\<YourUsername>\AppData\Local\nvim
   ```
-
 
 #### Start Neovim
 
@@ -54,5 +48,3 @@ nvim
 ```
 
 #### AstroNvim [Docs](https://docs.astronvim.com/)
-
-
